@@ -108,7 +108,7 @@ void loadSettings();
 
 uint8_t max_speed_on_display = 50;
 bool PWM_mode = WIDE_PWM;
-bool use_bat_control = true;
+bool use_bat_control = false;
 float min_voltage_cell = 2.9;
 float max_voltage_cell = 4.2;
 uint8_t batt_type = BAT_2S;
