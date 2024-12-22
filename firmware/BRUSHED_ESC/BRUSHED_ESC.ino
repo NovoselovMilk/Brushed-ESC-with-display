@@ -286,15 +286,17 @@ void loop()
       if (pwm_output > 255)
         pwm_output = 255;
 
+      pwm_output = (~pwm_output) & 0xFF;
+
 #ifdef DEBUG
       Serial.print("BACKWARD\t");
       Serial.print(pwm_output);
       Serial.print("\t");
       Serial.println(width_pwm);
 #endif
-      // analogWrite(PIN_FWD, 1023);
-      digitalWrite(PIN_FWD, HIGH);
-      analogWrite(PIN_BKWD, pwm_output);
+
+      digitalWrite(PIN_BKWD, LOW);
+      analogWrite(PIN_FWD, pwm_output);
 
       digitalWrite(PIN_REVERSE_LIGHT, ON_LIGHT);
       digitalWrite(PIN_BRAKE_LIGHT, OFF_LIGHT);
@@ -345,7 +347,6 @@ void loop()
         pwm_output = 0;
       if (pwm_output > 255)
         pwm_output = 255;
-      pwm_output = (~pwm_output) & 0xFF;
 
 #ifdef DEBUG
       Serial.print("FORWARD\t");
@@ -353,9 +354,9 @@ void loop()
       Serial.println(width_pwm);
 
 #endif
-      // analogWrite(PIN_BKWD, 1023);
-      digitalWrite(PIN_BKWD, HIGH);
-      analogWrite(PIN_FWD, pwm_output);
+
+      digitalWrite(PIN_FWD, LOW);
+      analogWrite(PIN_BKWD, pwm_output);
 
       digitalWrite(PIN_REVERSE_LIGHT, OFF_LIGHT);
       digitalWrite(PIN_BRAKE_LIGHT, OFF_LIGHT);
