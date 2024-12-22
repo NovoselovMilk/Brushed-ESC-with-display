@@ -83,7 +83,7 @@
 
 ### Страница с настройками регулятора
 
-![ESC_Settings](doc/ESC_Settings.png)
+![ESC_Settings](doc/ESC_Settings.PNG) 
 
 - **Max speed OLED** - Максимальная скорость отображаемая на дисплее.
 - **LED** - Возможность отключения светодиода на плате WEMOS.
