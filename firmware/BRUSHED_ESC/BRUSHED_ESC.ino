@@ -388,7 +388,7 @@ void loop()
 
     if (current_mode == FORWARD || current_mode == BACKWARD)
     {
-      current_speed = map(((~pwm_output) & 0xFF), 0, 255, 0, max_speed_on_display);
+      current_speed = map(((~pwm_output) & 0xFF), 255, 0, 0, max_speed_on_display);
     }
     else
       current_speed = 0;
